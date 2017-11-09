@@ -1,4 +1,4 @@
-<map version="1.0.1">
+<map version="0.8.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1510230203070" ID="ID_1425632117" MODIFIED="1510230284459" STYLE="bubble" TEXT="Gaia Black hole binaries">
 <node CREATED="1510230268184" ID="ID_1501031073" MODIFIED="1510230284459" POSITION="right" TEXT="Previous works">
@@ -14,7 +14,9 @@
 </node>
 <node CREATED="1510231810455" ID="ID_652980626" MODIFIED="1510231816087" TEXT="Galactic extinction"/>
 <node CREATED="1510231820787" ID="ID_1415881942" MODIFIED="1510231822177" TEXT="Kicks"/>
-<node CREATED="1510231825490" ID="ID_175029529" MODIFIED="1510231915988" TEXT="Nyquist effect for rapidly rotating binaries"/>
+<node CREATED="1510231825490" ID="ID_175029529" MODIFIED="1510231915988" TEXT="Nyquist effect for rapidly rotating binaries">
+<node CREATED="1510246858995" ID="_" MODIFIED="1510246943109" TEXT="Not important, because rapidly rotating stars are close, and therefore transfer mass, and so emit in the x ray"/>
+</node>
 </node>
 </node>
 </map>
