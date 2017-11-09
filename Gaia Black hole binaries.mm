@@ -2,7 +2,9 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1510230203070" ID="ID_1425632117" MODIFIED="1510230284459" STYLE="bubble" TEXT="Gaia Black hole binaries">
 <node CREATED="1510230268184" ID="ID_1501031073" MODIFIED="1510230284459" POSITION="right" TEXT="Previous works">
-<node CREATED="1510230304040" ID="ID_676828124" LINK="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1710.09839" MODIFIED="1510230313419" TEXT="Yamaguchi et al"/>
+<node CREATED="1510230304040" ID="ID_676828124" LINK="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1710.09839" MODIFIED="1510230313419" TEXT="Yamaguchi et al">
+<node CREATED="1510248224939" ID="Freemind_Link_444798746" MODIFIED="1510248282597" TEXT="In equation 15, if we substitute hipparcos instead of gaia parameters, how many detections will we get?"/>
+</node>
 </node>
 <node CREATED="1510230657450" ID="ID_295170164" MODIFIED="1510230698444" POSITION="left" TEXT="Theoretical modelling">
 <node CREATED="1510230700186" ID="ID_846402411" MODIFIED="1510230705290" TEXT="Uncertainty in mass">
@@ -17,6 +19,10 @@
 <node CREATED="1510231825490" ID="ID_175029529" MODIFIED="1510231915988" TEXT="Nyquist effect for rapidly rotating binaries">
 <node CREATED="1510246858995" ID="_" MODIFIED="1510246943109" TEXT="Not important, because rapidly rotating stars are close, and therefore transfer mass, and so emit in the x ray"/>
 </node>
+</node>
+<node CREATED="1510247802965" ID="Freemind_Link_862443263" MODIFIED="1510247808841" POSITION="right" TEXT="Empirical modelling">
+<node CREATED="1510247810349" ID="Freemind_Link_307189395" MODIFIED="1510247817112" TEXT="Comparison to Hippacos"/>
+<node CREATED="1510247819021" ID="Freemind_Link_910515591" MODIFIED="1510247822952" TEXT="Comparison to Kepler"/>
 </node>
 </node>
 </map>
