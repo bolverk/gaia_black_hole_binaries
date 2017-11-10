@@ -21,7 +21,9 @@
 </node>
 </node>
 <node CREATED="1510247802965" ID="Freemind_Link_862443263" MODIFIED="1510247808841" POSITION="right" TEXT="Empirical modelling">
-<node CREATED="1510247810349" ID="Freemind_Link_307189395" MODIFIED="1510247817112" TEXT="Comparison to Hippacos"/>
+<node CREATED="1510247810349" ID="Freemind_Link_307189395" MODIFIED="1510247817112" TEXT="Comparison to Hippacos">
+<node CREATED="1510336962413" ID="Freemind_Link_1578749879" LINK="https://arxiv.org/abs/1202.2064" MODIFIED="1510336987005" TEXT="Paper comparing Hipparcos to Gaia"/>
+</node>
 <node CREATED="1510247819021" ID="Freemind_Link_910515591" MODIFIED="1510247822952" TEXT="Comparison to Kepler"/>
 </node>
 </node>
