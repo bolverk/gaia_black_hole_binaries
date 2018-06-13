@@ -5,3 +5,4 @@ from whittle_hipparcos import whittle_hipparcos
 import CommonEnvelope
 import EvolutionSequence
 import NatalKicks
+from PowerLawDistribution import PowerLawDistribution

@@ -1,6 +1,6 @@
 def fiducial():
     
-    from randomise_primary_mass_salpeter import randomise_primary_mass_salpeter
+    from PowerLawDistribution import PowerLawDistribution
     from randomise_mass_ratio_yamaguchi import randomise_mass_ratio_yamaguchi
     from randomise_semi_major_axis_yamaguchi import randomise_semi_major_axis_yamaguchi
     from randomise_galaxy_position_yamaguchi import randomise_galaxy_position_yamaguchi
@@ -9,7 +9,7 @@ def fiducial():
     from CommonEnvelope import evolve_common_envelope
     
     res = {}
-    res['primary mass'] = randomise_primary_mass_salpeter
+    res['primary mass'] = PowerLawDistribution(20,100,2.35)
     res['initial mass ratio'] = randomise_mass_ratio_yamaguchi
     res['initial semi major axis'] = randomise_semi_major_axis_yamaguchi
     res['initial eccentricity'] = randomise_eccentricity_duchene_kraus
