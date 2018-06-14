@@ -55,6 +55,20 @@ def is_black_hole_conclusive(population):
     return numpy.logical_and(population['black hole mass']>3.0/(1.0-sigma_pomega/opening_angle-sigma_G),
                              apoapses>10*sigma_pomega*population['distance from earth']*5e-12)
 
+def is_neutron_star_conclusive(population):
+    
+    import numpy
+    
+    sigma_pomega = 100*calc_sigma_pomega(population['apparent magnitude'])
+    apoapses = population['terminal semi major axis']*(1 + population['terminal eccentricity'])
+    opening_angle = 2e11*apoapses/population['distance from earth']
+    sigma_G = calc_sigma_G(population['apparent magnitude'])
+    
+    aux = numpy.logical_and(population['black hole mass']>1.4/(1.0-sigma_pomega/opening_angle-sigma_G),
+                            population['black hole mass']<2.4/(1.0-sigma_pomega/opening_angle-sigma_G))
+    return numpy.logical_and(aux,
+                             apoapses>10*sigma_pomega*population['distance from earth']*5e-12)
+
 
 def is_bound(population):
     
@@ -64,14 +78,17 @@ def is_sma_positive(population):
     
     return population['terminal semi major axis']>0
 
-def whittle_hipparcos(population):
+def whittle_hipparcos(population, species='black hole'):
     
     import numpy
+    
+    species_filter = {'black hole':is_black_hole_conclusive,
+                      'neutron star':is_neutron_star_conclusive}
     
     condition_list = [is_outside_companion_roche_radius,
                      is_within_period_range,
                      is_bright_enough,
-                     is_black_hole_conclusive,
+                     species_filter[species],
                      is_bound,
                      is_sma_positive]
     mask_list = [cond(population) for cond in condition_list]
