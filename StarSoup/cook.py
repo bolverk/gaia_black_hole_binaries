@@ -10,6 +10,7 @@ def cook(recipe, number):
     import numpy
     from calc_absolute_magnitude_smith import calc_absolute_magnitude_smith
     from convert_absolute_to_apparent_magnitude import convert_absolute_to_apparent_magnitude
+    from hurley import HurleyModel
     
     res = {}
     res['primary mass'] = recipe['primary mass'](number)
@@ -28,14 +29,16 @@ def cook(recipe, number):
         res['initial companion mass'],
         res['initial semi major axis'],
         res['initial eccentricity'])
-    #res['lifetime'] = res['terminal companion mass']**-2.5 - res['primary mass']**-2.5
+    age_estimator = HurleyModel(0.02)
+    res['lifetime'] = age_estimator(res['terminal companion mass']) - age_estimator(res['primary mass'])
     res['lifetime'] = numpy.where(res['terminal companion mass']>1.01*res['initial companion mass'],
-                                  res['terminal companion mass']**-2.5,
-                                  res['initial companion mass']**-2.5-res['primary mass']**-2.5)
+                                  age_estimator(res['terminal companion mass']),
+                                  age_estimator(res['initial companion mass'])-age_estimator(res['primary mass']))
     res['statistical weight'] = numpy.clip(res['lifetime'],0,1)
     total_mass = res['black hole mass'] + res['terminal companion mass']
     res['terminal period'] = 9.4e7*res['terminal semi major axis']**1.5/numpy.sqrt(total_mass)
-    res['absolute magnitude'] = calc_absolute_magnitude_smith(res['terminal companion mass'])
+    #res['absolute magnitude'] = calc_absolute_magnitude_smith(res['terminal companion mass'])
+    res['absolute magnitude'] = age_estimator(res['terminal companion mass'])
     res['apparent magnitude'] = convert_absolute_to_apparent_magnitude(res['absolute magnitude'],
                                                                  res['distance from earth'],
                                                                  extinction=True)

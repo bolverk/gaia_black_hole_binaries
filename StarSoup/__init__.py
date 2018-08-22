@@ -6,3 +6,4 @@ import CommonEnvelope
 import EvolutionSequence
 import NatalKicks
 from PowerLawDistribution import PowerLawDistribution
+from hurley import HurleyModel

@@ -52,7 +52,7 @@ def is_black_hole_conclusive(population):
     opening_angle = 2e11*apoapses/population['distance from earth']
     sigma_G = calc_sigma_G(population['apparent magnitude'])
     
-    return numpy.logical_and(population['black hole mass']>3.0/(1.0-sigma_pomega/opening_angle-sigma_G),
+    return numpy.logical_and(population['black hole mass']>3.0/(1.0-(5./3.)*sigma_pomega/opening_angle-sigma_G),
                              apoapses>10*sigma_pomega*population['distance from earth']*5e-12)
 
 def is_neutron_star_conclusive(population):
@@ -64,8 +64,8 @@ def is_neutron_star_conclusive(population):
     opening_angle = 2e11*apoapses/population['distance from earth']
     sigma_G = calc_sigma_G(population['apparent magnitude'])
     
-    aux = numpy.logical_and(population['black hole mass']>1.4*(1.0-sigma_pomega/opening_angle-sigma_G),
-                            population['black hole mass']<2.4/(1.0-sigma_pomega/opening_angle-sigma_G))
+    aux = numpy.logical_and(population['black hole mass']>1.4*(1.0+(5./3.)*sigma_pomega/opening_angle-sigma_G),
+                            population['black hole mass']<2.4/(1.0-(5./3.)*sigma_pomega/opening_angle-sigma_G))
     return numpy.logical_and(aux,
                              apoapses>10*sigma_pomega*population['distance from earth']*5e-12)
 
